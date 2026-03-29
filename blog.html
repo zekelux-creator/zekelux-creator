@@ -2,30 +2,125 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Conseils Plafonnage & Façade | Blog Zekelux</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> <style>
-        .blog-container { max-width: 800px; margin: 50px auto; padding: 20px; font-family: sans-serif; }
-        .post-card { border-bottom: 1px solid #eee; padding: 20px 0; }
-        .post-card h2 { color: #d32f2f; margin-bottom: 10px; }
-        .post-card .date { color: #888; font-size: 0.9rem; }
-        .btn-lire { display: inline-block; margin-top: 10px; color: #d32f2f; font-weight: bold; text-decoration: none; }
+    <title>Blog Expertise Plafonnage & Façade | SRL KUS ZEKERIYA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques pour le blog pour coller à ton site */
+        :root {
+            --main-red: #d32f2f;
+            --dark-bg: #1a1a1a;
+        }
+
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #fdfdfd; }
+
+        /* Style du Header (Inspiré de tes captures) */
+        nav {
+            background: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand { font-weight: bold; text-decoration: none; color: #333; font-size: 1.4rem; text-transform: uppercase; }
+        .nav-brand span { color: var(--main-red); }
+
+        .nav-links a { text-decoration: none; color: #333; margin-left: 20px; font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--main-red); }
+
+        /* Section Blog */
+        .blog-header {
+            background: var(--dark-bg);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+            border-bottom: 5px solid var(--main-red);
+        }
+
+        .blog-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .container { max-width: 1000px; margin: -40px auto 60px; padding: 0 20px; }
+
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--main-red);
+        }
+
+        .post-card:hover { transform: translateY(-5px); }
+
+        .post-content { padding: 25px; }
+        .post-content .date { color: #888; font-size: 0.85rem; display: block; margin-bottom: 10px; }
+        .post-content h2 { margin: 0 0 15px 0; font-size: 1.3rem; color: #1a1a1a; line-height: 1.4; }
+        .post-content p { color: #555; font-size: 0.95rem; line-height: 1.6; }
+
+        .btn-read {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--main-red);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+        }
+
+        .btn-read:hover { border-bottom-color: var(--main-red); }
+
+        footer { background: var(--dark-bg); color: #888; padding: 40px 5%; text-align: center; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <div class="blog-container">
-        <h1>Le Blog de l'Expertise en Parachèvement</h1>
-        <p>Province de Luxembourg : Bastogne, Libramont, Vaux-sur-Sûre.</p>
+    <nav>
+        <a href="index.html" class="nav-brand">SRL <span>KUS</span> ZEKERIYA</a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="blog.html" style="color: var(--main-red);">Blog</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
 
-        <article class="post-card">
-            <span class="date">Mars 2026</span>
-            <h2>Plafonneur à Bastogne : Pourquoi choisir un artisan local plutôt qu'une grande entreprise ?</h2>
-            <p>Face aux géants du secteur, l'artisan local offre une réactivité et un suivi de chantier que les grosses structures ne peuvent plus garantir...</p>
-            <a href="article-choisir-plafonneur.html" class="btn-lire">Lire la suite →</a>
-        </article>
+    <header class="blog-header">
+        <h1>Conseils d'Experts</h1>
+        <p>Tout savoir sur le plafonnage et la façade en Province de Luxembourg</p>
+    </header>
+
+    <div class="container">
+        <div class="blog-grid">
+            
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="date">29 Mars 2026</span>
+                    <h2>Pourquoi choisir un artisan local à Bastogne ?</h2>
+                    <p>Découvrez pourquoi la proximité et la présence du patron sur chantier font toute la différence pour la qualité de vos finitions.</p>
+                    <a href="article-choisir-plafonneur.html" class="btn-read">Lire l'article →</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="date">À venir</span>
+                    <h2>Primes Rénovation 2026 : Ce qu'il faut savoir</h2>
+                    <p>Ne passez pas à côté des aides de la Région Wallonne pour l'isolation de votre façade ou vos travaux de plafonnage.</p>
+                    <a href="#" class="btn-read" style="color:#ccc;">Bientôt disponible</a>
+                </div>
+            </article>
 
         </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SRL KUS ZEKERIYA | Plafonnage & Façade Luxembourg</p>
+    </footer>
 
 </body>
 </html>
