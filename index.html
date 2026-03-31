@@ -299,11 +299,26 @@ footer{background:var(--n);color:#999;padding:3rem 7% 1.8rem;}
 <div style="padding-top:68px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:#1a1a1a;position:relative;overflow:hidden;">
   <div style="display:flex;flex-direction:column;justify-content:center;padding:5% 5% 5% 7%;z-index:2;animation:fadeUp 0.7s both;">
     <p style="font-size:0.88rem;color:#bbb;margin-bottom:0.6rem;letter-spacing:0.04em;">Isolez, Économisez, Valorisez.</p>
-    <h1 style="font-weight: 900; text-transform: uppercase; line-height: 1.2; display: flex; flex-direction: column;">
-      <a href="facade-traditionnelle.html" style="color: #ffcc00; text-decoration: none; font-size: 1.2em; margin-bottom: 10px;">FAÇADES</a>
-      <a href="facade-isolante.html" style="color: #ffcc00; text-decoration: none; font-size: 1.2em; margin-bottom: 10px;">ISOLATION</a>
-      <a href="plafonnage-traditionnel.html" style="color: #ffcc00; text-decoration: none; font-size: 1.2em;">PLAFONNAGE</a>
-    </h1>
+    <style>
+  .hero-link {
+    display: block;             /* Un sur l'autre */
+    color: #ffffff;             /* Blanc par défaut */
+    text-decoration: none;      /* Pas de souligné */
+    font-size: 1.1em;           /* Un peu plus grand */
+    font-weight: 900;           /* Très gras comme ton logo */
+    line-height: 1.2;           /* Espace entre les lignes */
+    transition: 0.3s ease;      /* Animation fluide */
+  }
+  .hero-link:hover, .hero-link:active {
+    color: #ffcc00;             /* Jaune KUS au clic/survol */
+  }
+</style>
+
+<h1 style="text-transform: uppercase;">
+  <a href="facade-traditionnelle.html" class="hero-link">FAÇADES</a>
+  <a href="facade-isolante.html" class="hero-link">ISOLATION</a>
+  <a href="plafonnage-traditionnel.html" class="hero-link">PLAFONNAGE</a>
+</h1>
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1rem,2vw,1.5rem);color:#F5C800;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.3rem;">Région de Fauvillers, Bastogne,</h2>
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1rem,2vw,1.5rem);color:#F5C800;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.3rem;">Vaux-sur-Sûre, Libramont, Étalle</h2>
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1rem,2vw,1.5rem);color:#F5C800;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:1rem;">et Arlon</h2>
