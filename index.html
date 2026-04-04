@@ -504,17 +504,55 @@ footer{background:var(--n);color:#999;padding:3rem 7% 1.8rem;}
         </div>
       </div>
     </div>
-    <div class="form-b"><form action="https://formspree.io/f/xjgakawv" method="POST" onsubmit="gtag_report_conversion()">
+  <div class="form-b"><form id="form-devis">
   <div class="form-row"><div class="fg"><label>Prénom *</label><input type="text" name="prenom" placeholder="Votre prénom" required></div><div class="fg"><label>Nom *</label><input type="text" name="nom" placeholder="Votre nom" required></div></div>
   <div class="form-row"><div class="fg"><label>Email *</label><input type="email" name="email" placeholder="votre@email.com" required></div><div class="fg"><label>Téléphone</label><input type="tel" name="telephone" placeholder="+32 xxx xx xx xx"></div></div>
   <div class="fg"><label>Type de travaux *</label><select name="service" required><option value="">Sélectionnez un service</option><option>Plafonnage intérieur traditionnel</option><option>Plafonnage bâtiment ancien</option><option>Façade traditionnelle (cimentage/rejointoyage)</option><option>Façade isolante (crépi sur isolant)</option><option>Cloisons &amp; faux-plafonds</option><option>Isolation par l'intérieur</option><option>Peinture intérieure &amp; extérieure</option><option>Plusieurs services</option></select></div>
   <div class="fg"><label>Ville du chantier *</label><input type="text" name="ville" placeholder="Ex: Bastogne, Libramont, Arlon…" required></div>
   <div class="fg"><label>Description du projet</label><textarea name="message" placeholder="Surface approximative, type de bâtiment, délai souhaité…"></textarea></div>
-  <input type="hidden" name="_subject" value="Nouvelle demande de devis - KUS ZEKERIYA">
-  <input type="hidden" name="_next" value="https://plafonnage-facade-luxembourg.be/merci.html">
-<button type="submit" onclick="gtag('event', 'conversion', {'send_to': 'AW-966696257/PvJpCJHDjJUCEMG6-swD'});" class="btn-p" style="width:100%;justify-content:center;font-size:0.95rem;">Envoyer ma demande -</button>
-     <p style="font-size:0.76rem;color:#999;text-align:center;margin-top:0.6rem;">Gratuit · Sans engagement · Réponse sous 48h</p>
+  <input type="hidden" name="access_key" value="ae4eb122-5f56-4f5e-babd-91b18fd7d418">
+  <input type="hidden" name="subject" value="Nouvelle demande de devis - KUS ZEKERIYA">
+  <button type="submit" class="btn-p" style="width:100%;justify-content:center;font-size:0.95rem;">Envoyer ma demande</button>
+  <p style="font-size:0.76rem;color:#999;text-align:center;margin-top:0.6rem;">Gratuit · Sans engagement · Réponse sous 48h</p>
 </form></div>
+   <div id="message-succes" style="display:none; color: #155724; background-color: #d4edda; border-color: #c3e6cb; padding: 15px; margin-top: 15px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 0.9rem;">
+  Merci ! Votre demande a bien été envoyée. Nous vous contacterons sous 48h.
+</div>
+
+<script>
+  document.getElementById('form-devis').addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche la redirection
+    const form = e.target;
+    const formData = new FormData(form);
+    const btn = form.querySelector('button[type="submit"]');
+
+    // Animation du bouton
+    btn.innerHTML = 'Envoi en cours...';
+    btn.disabled = true;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(async (response) => {
+      if (response.status == 200) {
+        // Succès : on cache le formulaire et affiche le message vert
+        form.style.display = 'none';
+        document.getElementById('message-succes').style.display = 'block';
+
+        // DÉCLENCHEMENT PARFAIT DE GOOGLE ADS
+        if(typeof gtag === 'function') {
+          gtag('event', 'conversion', {'send_to': 'AW-966696257/PvJpCJHDjJUcEMG6-swD'});
+        }
+      }
+    })
+    .catch(error => {
+      alert("Une erreur de réseau est survenue, veuillez réessayer.");
+      btn.innerHTML = 'Envoyer ma demande';
+      btn.disabled = false;
+    });
+  });
+</script>
   </div>
 </section>
 <footer>
