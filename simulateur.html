@@ -212,173 +212,24 @@ footer{background:var(--n);color:#999;padding:3rem 7% 1.8rem;}
 /* ===== IMPRESSION PROPRE ===== */
 
 @media print {
-  @page { size: A4; margin: 12mm 14mm; }
-  -webkit-print-color-adjust: exact !important;
-  print-color-adjust: exact !important;
-
-  /* ── Cacher tout ce qui n'est pas l'impression ── */
-  nav, footer, .page-hero, .no-print, #coord-modal,
-  a[href*="wa.me"], .nav-burger,
-  main > div.grid > aside,
-  .space-y-6 > section,
-  header { display:none !important; }
-
-  body { background:#fff !important; padding-top:0 !important; font-family:'Lato',sans-serif !important; }
+  @page { margin: 12mm; }
+  nav, footer, .page-hero, .no-print, #coord-modal, a[href*="wa.me"], .nav-burger, main > div.grid > aside > div > button { display:none !important; }
+  body { background:#fff !important; padding-top:0 !important; }
   .sim-wrap { padding:0 !important; max-width:100% !important; }
-
-  /* ── Cacher lignes/sections vides ── */
+  header { display:none !important; }
+  
+  /* zone imprimable */
+  #print-company { display:block !important; background:#000 !important; color:#F5C800 !important; padding:14px !important; margin-bottom:12px !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #print-company * { color:#F5C800 !important; }
+  #print-coords { display:block !important; border:1px solid #ddd !important; padding:10px !important; margin-bottom:12px !important; }
+  #print-qr { display:block !important; }
+  #print-summary { display:block !important; }
+  
+  .space-y-6 > section { display:none !important; } /* cache l'éditeur */
   section.print-hide, tr.print-hide { display:none !important; }
-
-  /* ── EN-TÊTE jaune identique au PDF ── */
-  #print-company {
-    display:block !important;
-    background:#F5C800 !important;
-    -webkit-print-color-adjust:exact !important;
-    print-color-adjust:exact !important;
-    padding:14px 18px !important;
-    margin-bottom:0 !important;
-  }
-  #print-company .pc-name {
-    font-family:'Barlow Condensed',sans-serif !important;
-    font-size:26px !important;
-    font-weight:900 !important;
-    color:#111 !important;
-    display:block !important;
-    text-transform:uppercase !important;
-    letter-spacing:1px !important;
-  }
-  #print-company .pc-sub {
-    font-size:10px !important;
-    color:#333 !important;
-    display:block !important;
-    margin-top:3px !important;
-  }
-  #print-company a { color:#111 !important; text-decoration:none !important; }
-
-  /* ── TITRE SIMULATION ── */
-  #print-title {
-    display:block !important;
-    font-size:15px !important;
-    font-weight:800 !important;
-    text-transform:uppercase !important;
-    letter-spacing:1px !important;
-    color:#111 !important;
-    padding:10px 0 2px !important;
-  }
-  #print-subtitle {
-    display:block !important;
-    font-size:10px !important;
-    color:#777 !important;
-    margin-bottom:8px !important;
-    font-style:italic !important;
-  }
-
-  /* ── COORDONNÉES client ── */
-  #print-coords {
-    display:block !important;
-    border:none !important;
-    padding:0 !important;
-    margin-bottom:10px !important;
-    font-size:11px !important;
-    color:#444 !important;
-    background:transparent !important;
-  }
-  #print-coords h3 { display:none !important; }
-
-  /* ── TABLEAU des lignes remplies ── */
-  #print-lines-table {
-    display:block !important;
-    width:100% !important;
-    margin-bottom:0 !important;
-  }
-  #print-lines-table table {
-    width:100% !important;
-    border-collapse:collapse !important;
-    font-size:11.5px !important;
-  }
-  #print-lines-table thead th {
-    text-align:left !important;
-    font-size:9px !important;
-    text-transform:uppercase !important;
-    letter-spacing:.8px !important;
-    color:#666 !important;
-    font-weight:700 !important;
-    border-bottom:1.5px solid #ddd !important;
-    padding:5px 6px !important;
-  }
-  #print-lines-table thead th:not(:first-child) { text-align:right !important; }
-  #print-lines-table tbody td {
-    padding:5px 6px !important;
-    border-bottom:1px solid #eee !important;
-    color:#222 !important;
-    vertical-align:middle !important;
-  }
-  #print-lines-table tbody td:not(:first-child) { text-align:right !important; }
-  #print-lines-table .section-label td {
-    font-size:9px !important;
-    font-weight:800 !important;
-    text-transform:uppercase !important;
-    letter-spacing:.8px !important;
-    color:#D4A900 !important;
-    padding:8px 6px 3px !important;
-    border-bottom:none !important;
-    background:#fff !important;
-  }
-
-  /* ── TOTAL TTC fond jaune ── */
-  #print-total-box {
-    display:flex !important;
-    justify-content:space-between !important;
-    align-items:center !important;
-    background:#F5C800 !important;
-    -webkit-print-color-adjust:exact !important;
-    print-color-adjust:exact !important;
-    padding:10px 14px !important;
-    margin-top:4px !important;
-  }
-  #print-total-box .ptb-label {
-    font-family:'Barlow Condensed',sans-serif !important;
-    font-size:16px !important;
-    font-weight:900 !important;
-    color:#111 !important;
-    text-transform:uppercase !important;
-    letter-spacing:1px !important;
-  }
-  #print-total-box .ptb-amount {
-    font-family:'Barlow Condensed',sans-serif !important;
-    font-size:22px !important;
-    font-weight:900 !important;
-    color:#111 !important;
-  }
-
-  /* ── SOUS-TOTAUX HT / TVA ── */
-  #print-subtotals {
-    display:flex !important;
-    justify-content:flex-end !important;
-    gap:28px !important;
-    font-size:11px !important;
-    color:#555 !important;
-    padding:6px 6px 0 !important;
-    margin-bottom:2px !important;
-  }
-
-  /* ── FOOTER PDF ── */
-  #print-footer {
-    display:flex !important;
-    justify-content:space-between !important;
-    align-items:flex-start !important;
-    border-top:1px solid #ddd !important;
-    padding-top:8px !important;
-    margin-top:14px !important;
-    font-size:10px !important;
-    color:#444 !important;
-  }
-  #print-footer a { color:#1a56db !important; text-decoration:underline !important; }
-  #print-footer img { width:58px !important; height:58px !important; }
-
-  /* ── Cacher résumé ancien style ── */
-  #print-summary { display:none !important; }
-  #print-qr { display:none !important; }
+  
+  #print-summary { border:1px solid #ddd !important; }
+  #print-summary h2 { background:#F5C800 !important; color:#000 !important; padding:8px !important; -webkit-print-color-adjust:exact; }
 }
 
 </style>
@@ -503,61 +354,14 @@ footer{background:var(--n);color:#999;padding:3rem 7% 1.8rem;}
     </div>
   </header>
 
-  <!-- ===== ZONE IMPRESSION UNIQUEMENT ===== -->
-
-  <!-- EN-TÊTE JAUNE (identique au PDF) -->
-  <div id="print-company" style="display:none">
-    <span class="pc-name">SRL KUS ZEKERIYA</span>
-    <span class="pc-sub">
-      0479 63 57 32 &bull; <a href="mailto:zekelux@hotmail.com">zekelux@hotmail.com</a> &bull; <a href="https://plafonnage-facade-luxembourg.be">plafonnage-facade-luxembourg.be</a>
-    </span>
-  </div>
-
-  <!-- TITRE -->
-  <div id="print-title" style="display:none">SIMULATION</div>
-  <div id="print-subtitle" style="display:none">Document non contractuel – estimation indicative</div>
-
-  <!-- TABLEAU DES LIGNES REMPLIES -->
-  <div id="print-lines-table" style="display:none">
-    <table>
-      <thead>
-        <tr>
-          <th>Désignation</th>
-          <th>Qté</th>
-          <th>PU HTVA</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody id="print-lines-body"></tbody>
-    </table>
-  </div>
-
-  <!-- SOUS-TOTAUX -->
-  <div id="print-subtotals" style="display:none">
-    <span>Total HTVA : <strong id="ps-ht"></strong></span>
-    <span>TVA : <strong id="ps-tva"></strong></span>
-  </div>
-
-  <!-- TOTAL TTC fond jaune -->
-  <div id="print-total-box" style="display:none">
-    <span class="ptb-label">TOTAL TTC</span>
-    <span class="ptb-amount" id="ps-ttc"></span>
-  </div>
-
-  <!-- FOOTER PDF : liens + QR -->
-  <div id="print-footer" style="display:none">
-    <div>
-      <div style="font-weight:700;margin-bottom:4px">Retrouvez-nous en ligne :</div>
-      <div>Site : <a href="https://plafonnage-facade-luxembourg.be">plafonnage-facade-luxembourg.be</a></div>
-      <div>Avis : <a href="https://g.page/r/CZk_puIrxUNNEBM/review">Donner votre avis Google</a></div>
-      <div>Tél : <a href="tel:+32479635732">0479 63 57 32</a></div>
-    </div>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKAQAAAABTUiuoAAACQklEQVR4nO2bQYqkQBBFX7RCLVPoA9RR9GpzpL6BHmVuoMuGlD+LzFSrBwZrwK6EjoCSsnyLD0GYET+zTJyM6e0sCY466ugbLJZjWPIFADNrKY/aSrQ6SiNJEtCI6R6BxUxShF6SNFej1dFcRxA+LWVmuks2AKnyhssFOHoq2uPN8i7rPzqMsLZ/tR8v1+roAxo+jalrBEsLU/ftAhz9d6TaOtRRP4JY3qNBGyEIWK4T4OiT6Jr6PlhuqaxsAOhnYDIzs+5aAY6eDR1iBo1BghCR5ub4cHy5VkdTUiBEIOTE0Cvf0iuikcazVQNKHqaClIupXApQfvNs1YE2Oo5VIQKsltYtALN7vFSAo0+gqyXLYgwxtxVDUKotjSEi/XbnqQqUw0KVLnMjjVBMp81+8jfh69Fj6zcC5U3YKHWHfTEQPVsVoKWDnxvlsjrkaGvoPVt1oNu8tQ9Y27cZ9gx6tupAl7yDZQNgZre0bWLWgX51q10twNEn0CDl+Tf17asBq+U9rxCxoRqtPxzlOA4/NBj7WuY9YUVoKG+9cbltDsZqJXnXC3D0dOxtRfIENW9u1BZeW5Wgjx78NhgfHEPAO/hK0GMd9cXL3XNEP+ehy7NVCbqfeVot7ZOkzZIZsr9xsQBHz0bZHWm0+4T7ClYeeG3Vh6aecDUmu8nsHtHIahoX9+CrQNsv94KYDqcpfcKM9R/XCXD0P6ZjbV5usXHTurWd1fA3YSXofuYpH4FPK9jUQT5ofbEAR0+G+T+CHHX0EvQPgibYLS7QSPAAAAAASUVORK5CYII=" alt="QR code">
-  </div>
-
-  <!-- Anciens éléments gardés vides pour compatibilité JS -->
-  <div id="print-qr" style="display:none"></div>
-  <div id="print-summary" style="display:none"></div>
+  <!-- RÉCAPITULATIF POUR IMPRESSION -->
+  <div id="print-qr" style="display:none">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;border-top:1px solid #ddd;padding-top:8px;margin-top:10px;font-size:11px">
+<div><div style="font-weight:700">Retrouvez-nous :</div>
+<div>Site : <a href="https://plafonnage-facade-luxembourg.be" style="color:#000;text-decoration:underline">plafonnage-facade-luxembourg.be</a></div>
+<div>Avis : <a href="https://g.page/r/CZk_puIrxUNNEBM/review" style="color:#000;text-decoration:underline">Avis Google</a></div></div>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKAQAAAABTUiuoAAACQklEQVR4nO2bQYqkQBBFX7RCLVPoA9RR9GpzpL6BHmVuoMuGlD+LzFSrBwZrwK6EjoCSsnyLD0GYET+zTJyM6e0sCY466ugbLJZjWPIFADNrKY/aSrQ6SiNJEtCI6R6BxUxShF6SNFej1dFcRxA+LWVmuks2AKnyhssFOHoq2uPN8i7rPzqMsLZ/tR8v1+roAxo+jalrBEsLU/ftAhz9d6TaOtRRP4JY3qNBGyEIWK4T4OiT6Jr6PlhuqaxsAOhnYDIzs+5aAY6eDR1iBo1BghCR5ub4cHy5VkdTUiBEIOTE0Cvf0iuikcazVQNKHqaClIupXApQfvNs1YE2Oo5VIQKsltYtALN7vFSAo0+gqyXLYgwxtxVDUKotjSEi/XbnqQqUw0KVLnMjjVBMp81+8jfh69Fj6zcC5U3YKHWHfTEQPVsVoKWDnxvlsjrkaGvoPVt1oNu8tQ9Y27cZ9gx6tupAl7yDZQNgZre0bWLWgX51q10twNEn0CDl+Tf17asBq+U9rxCxoRqtPxzlOA4/NBj7WuY9YUVoKG+9cbltDsZqJXnXC3D0dOxtRfIENW9u1BZeW5Wgjx78NhgfHEPAO/hK0GMd9cXL3XNEP+ehy7NVCbqfeVot7ZOkzZIZsr9xsQBHz0bZHWm0+4T7ClYeeG3Vh6aecDUmu8nsHtHIahoX9+CrQNsv94KYDqcpfcKM9R/XCXD0P6ZjbV5usXHTurWd1fA3YSXofuYpH4FPK9jUQT5ofbEAR0+G+T+CHHX0EvQPgibYLS7QSPAAAAAASUVORK5CYII=" style="width:60px;height:60px"></div></div>
+<div id="print-summary" class="hidden print:block mb-6"></div>
 
   <div class="space-y-6">
 
@@ -1111,82 +915,149 @@ coordForm.addEventListener('submit', async e => {
   const adresse = isAnon ? '-'       : (data.adresse || '-');
   const tel     = isAnon ? '-'       : (data.tel     || '-');
   const email   = isAnon ? '-'       : (data.email   || '-');
-
-  const coordsText = 'Client : ' + nom + '\nAdresse : ' + adresse + '\nTél : ' + tel + '\nEmail : ' + email + '\nDate : ' + new Date().toLocaleDateString('fr-BE');
-  document.getElementById('print-coords-content').textContent = coordsText;
-  document.getElementById('print-coords').classList.remove('hidden');
-
-  // === CONSTRUIRE LE TABLEAU DES LIGNES REMPLIES ===
-  const fmt2 = v => v.toLocaleString('fr-BE', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' €';
-  const tbody = document.getElementById('print-lines-body');
-  tbody.innerHTML = '';
-
-  const postes = [
-    { id: 'p1-tbody', label: 'POSTE 1 – Intérieur' },
-    { id: 'p2-tbody', label: 'POSTE 2 – Façade traditionnelle' },
-    { id: 'p3-tbody', label: 'POSTE 3 – Façade isolante' },
-    { id: 'p4-tbody', label: 'POSTE 4 – Peinture' },
-  ];
-
-  postes.forEach(({ id, label }) => {
-    const sourceTbody = document.getElementById(id);
-    if (!sourceTbody) return;
-
-    const rows = [];
-    sourceTbody.querySelectorAll('tr[data-pu]').forEach(tr => {
-      let qty = 0, hasVal = false;
-      const qtyInput = tr.querySelector('.qty');
-      const chk = tr.querySelector('.forfait-check');
-      if (qtyInput) { qty = parseFloat(qtyInput.value) || 0; hasVal = qty > 0; }
-      if (chk) { hasVal = chk.checked; qty = chk.checked ? 1 : 0; }
-      if (!hasVal) return;
-
-      const pu = parseFloat(tr.dataset.pu) || 0;
-      const tot = qty * pu;
-      const desig = tr.querySelector('td')?.textContent?.trim() || '';
-      const unite = tr.querySelector('td:nth-child(2)')?.textContent?.trim() || '';
-      rows.push({ desig, unite, qty, pu, tot });
-    });
-
-    // Poste 3 spécial (iso-surface)
-    if (id === 'p3-tbody') {
-      const isoSurf = parseFloat(document.getElementById('iso-surface')?.value) || 0;
-      const isoEp   = parseInt(document.getElementById('iso-ep')?.value) || 20;
-      const puIso   = 140 + (isoEp - 20);
-      if (isoSurf > 0) rows.push({ desig: 'Façade isolante (crépi)', unite: 'm²', qty: isoSurf, pu: puIso, tot: isoSurf * puIso });
-      const laineSurf = parseFloat(document.getElementById('laine-surface')?.value) || 0;
-      if (laineSurf > 0) rows.push({ desig: 'Laine de roche', unite: 'm²', qty: laineSurf, pu: 10, tot: laineSurf * 10 });
-    }
-
-    if (rows.length === 0) return;
-
-    // Titre du poste
-    const labelTr = document.createElement('tr');
-    labelTr.className = 'section-label';
-    labelTr.innerHTML = `<td colspan="4">${label}</td>`;
-    tbody.appendChild(labelTr);
-
-    rows.forEach(r => {
-      const tr2 = document.createElement('tr');
-      tr2.innerHTML = `<td>${r.desig}</td><td>${r.qty} ${r.unite}</td><td>${fmt2(r.pu)}</td><td>${fmt2(r.tot)}</td>`;
-      tbody.appendChild(tr2);
-    });
-  });
-
-  // Remplir totaux
-  document.getElementById('ps-ht').textContent  = document.getElementById('r-ht').textContent;
-  document.getElementById('ps-tva').textContent  = document.getElementById('r-tva').textContent;
-  document.getElementById('ps-ttc').textContent  = document.getElementById('r-ttc').textContent;
-
-  // Afficher les blocs impression
-  ['print-company','print-title','print-subtitle','print-lines-table','print-subtotals','print-total-box','print-footer'].forEach(id => {
-    document.getElementById(id).style.display = '';
-  });
+  const date    = new Date().toLocaleDateString('fr-BE');
 
   modal.classList.add('hidden');
   modal.classList.remove('flex');
-  setTimeout(() => window.print(), 300);
 
+  // ── Collecter les lignes remplies ──
+  const fmtE = v => v.toLocaleString('fr-BE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+
+  const postes = [
+    { id:'p1-tbody', label:'POSTE 1 – Intérieur' },
+    { id:'p2-tbody', label:'POSTE 2 – Façade traditionnelle' },
+    { id:'p3-tbody', label:'POSTE 3 – Façade isolante' },
+    { id:'p4-tbody', label:'POSTE 4 – Peinture' },
+  ];
+
+  let lignesHTML = '';
+  postes.forEach(({id, label}) => {
+    const tbody = document.getElementById(id);
+    if (!tbody) return;
+    let rows = '';
+    tbody.querySelectorAll('tr[data-pu]').forEach(tr => {
+      const qtyInput = tr.querySelector('.qty');
+      const chk      = tr.querySelector('.forfait-check');
+      let qty = 0;
+      if (qtyInput) qty = parseFloat(qtyInput.value) || 0;
+      if (chk)      qty = chk.checked ? 1 : 0;
+      if (!qty) return;
+      const pu  = parseFloat(tr.dataset.pu) || 0;
+      const tot = qty * pu;
+      const desig = tr.querySelector('td')?.textContent?.trim() || '';
+      const unite = tr.querySelector('td:nth-child(2)')?.textContent?.trim() || '';
+      rows += `<tr>
+        <td style="padding:5px 8px;border-bottom:1px solid #eee;">${desig}</td>
+        <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;">${qty} ${unite}</td>
+        <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;">${fmtE(pu)}</td>
+        <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;font-weight:600;">${fmtE(tot)}</td>
+      </tr>`;
+    });
+    // Poste 3 spécial (iso + laine)
+    if (id === 'p3-tbody') {
+      const isoSurf = parseFloat(document.getElementById('iso-surface')?.value)||0;
+      const isoEp   = parseInt(document.getElementById('iso-ep')?.value)||20;
+      const puIso   = 140+(isoEp-20);
+      if (isoSurf>0) rows += `<tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">Façade isolante (crépi)</td><td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;">${isoSurf} m²</td><td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;">${fmtE(puIso)}</td><td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;font-weight:600;">${fmtE(isoSurf*puIso)}</td></tr>`;
+      const laineSurf = parseFloat(document.getElementById('laine-surface')?.value)||0;
+      if (laineSurf>0) rows += `<tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">Laine de roche</td><td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;">${laineSurf} m²</td><td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;">${fmtE(10)}</td><td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;font-weight:600;">${fmtE(laineSurf*10)}</td></tr>`;
+    }
+    if (!rows) return;
+    lignesHTML += `<tr><td colspan="4" style="padding:10px 8px 3px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#D4A900;">${label}</td></tr>${rows}`;
+  });
+
+  const totalHT  = document.getElementById('r-ht').textContent;
+  const totalTVA = document.getElementById('r-tva').textContent;
+  const totalTTC = document.getElementById('r-ttc').textContent;
+  const tvaBtn   = document.querySelector('.tva-btn.active');
+  const tauxLabel = tvaBtn ? (parseFloat(tvaBtn.dataset.tva)*100)+'%' : '21%';
+
+  // ── QR code base64 ──
+  const QR = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKAQAAAABTUiuoAAACQklEQVR4nO2bQYqkQBBFX7RCLVPoA9RR9GpzpL6BHmVuoMuGlD+LzFSrBwZrwK6EjoCSsnyLD0GYET+zTJyM6e0sCY466ugbLJZjWPIFADNrKY/aSrQ6SiNJEtCI6R6BxUxShF6SNFej1dFcRxA+LWVmuks2AKnyhssFOHoq2uPN8i7rPzqMsLZ/tR8v1+roAxo+jalrBEsLU/ftAhz9d6TaOtRRP4JY3qNBGyEIWK4T4OiT6Jr6PlhuqaxsAOhnYDIzs+5aAY6eDR1iBo1BghCR5ub4cHy5VkdTUiBEIOTE0Cvf0iuikcazVQNKHqaClIupXApQfvNs1YE2Oo5VIQKsltYtALN7vFSAo0+gqyXLYgwxtxVDUKotjSEi/XbnqQqUw0KVLnMjjVBMp81+8jfh69Fj6zcC5U3YKHWHfTEQPVsVoKWDnxvlsjrkaGvoPVt1oNu8tQ9Y27cZ9gx6tupAl7yDZQNgZre0bWLWgX51q10twNEn0CDl+Tf17asBq+U9rxCxoRqtPxzlOA4/NBj7WuY9YUVoKG+9cbltDsZqJXnXC3D0dOxtRfIENW9u1BZeW5Wgjx78NhgfHEPAO/hK0GMd9cXL3XNEP+ehy7NVCbqfeVot7ZOkzZIZsr9xsQBHz0bZHWm0+4T7ClYeeG3Vh6aecDUmu8nsHtHIahoX9+CrQNsv94KYDqcpfcKM9R/XCXD0P6ZjbV5usXHTurWd1fA3YSXofuYpH4FPK9jUQT5ofbEAR0+G+T+CHHX0EvQPgibYLS7QSPAAAAAASUVORK5CYII=';
+
+  // ── Construire le HTML de la fenêtre d'impression ──
+  const printHTML = `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<title>Simulation – SRL KUS ZEKERIYA</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Arial,sans-serif;font-size:12px;color:#222;background:#fff;}
+  @page{size:A4;margin:0;}
+  /* EN-TÊTE JAUNE */
+  .entete{background:#F5C800;padding:16px 20px 14px;}
+  .entete h1{font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#111;margin-bottom:4px;}
+  .entete p{font-size:10px;color:#333;}
+  .entete a{color:#333;text-decoration:none;}
+  /* CORPS */
+  .corps{padding:16px 20px;}
+  .titre-sim{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+  .sous-titre{font-size:9px;color:#777;font-style:italic;margin-bottom:10px;}
+  .client-info{font-size:10px;color:#444;margin-bottom:14px;line-height:1.7;}
+  /* TABLEAU */
+  table{width:100%;border-collapse:collapse;font-size:11px;}
+  thead th{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:#666;font-weight:700;border-bottom:1.5px solid #ccc;padding:5px 8px;text-align:left;}
+  thead th:not(:first-child){text-align:right;}
+  .section-label td{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#D4A900;padding:10px 8px 3px;}
+  /* TOTAUX */
+  .sous-totaux{display:flex;justify-content:flex-end;gap:24px;font-size:10px;color:#555;padding:8px 8px 4px;}
+  .total-ttc{display:flex;justify-content:space-between;align-items:center;background:#F5C800;padding:10px 14px;margin-top:2px;}
+  .total-ttc .label{font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#111;}
+  .total-ttc .montant{font-size:20px;font-weight:900;color:#111;}
+  /* FOOTER */
+  .footer-pdf{display:flex;justify-content:space-between;align-items:flex-start;border-top:1px solid #ddd;padding-top:10px;margin-top:18px;font-size:10px;color:#444;}
+  .footer-pdf a{color:#1a56db;text-decoration:underline;}
+  .footer-pdf img{width:62px;height:62px;}
+</style>
+</head><body>
+<div class="entete">
+  <h1>SRL KUS ZEKERIYA</h1>
+  <p>0479 63 57 32 &bull; <a href="mailto:zekelux@hotmail.com">zekelux@hotmail.com</a> &bull; <a href="https://plafonnage-facade-luxembourg.be">plafonnage-facade-luxembourg.be</a></p>
+</div>
+<div class="corps">
+  <div class="titre-sim">SIMULATION</div>
+  <div class="sous-titre">Document non contractuel – estimation indicative</div>
+  <div class="client-info">
+    Client : ${nom}<br>
+    Adresse : ${adresse}<br>
+    Tél : ${tel} &nbsp;|&nbsp; Email : ${email}<br>
+    Date : ${date}
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Désignation</th>
+        <th style="text-align:right">Qté</th>
+        <th style="text-align:right">PU HTVA</th>
+        <th style="text-align:right">Total</th>
+      </tr>
+    </thead>
+    <tbody>${lignesHTML}</tbody>
+  </table>
+  <div class="sous-totaux">
+    <span>Total HTVA : <strong>${totalHT}</strong></span>
+    <span>TVA (${tauxLabel}) : <strong>${totalTVA}</strong></span>
+  </div>
+  <div class="total-ttc">
+    <span class="label">TOTAL TTC (${tauxLabel})</span>
+    <span class="montant">${totalTTC}</span>
+  </div>
+  <div class="footer-pdf">
+    <div>
+      <div style="font-weight:700;margin-bottom:4px;">Retrouvez-nous en ligne :</div>
+      <div>Site : <a href="https://plafonnage-facade-luxembourg.be">plafonnage-facade-luxembourg.be</a></div>
+      <div>Avis : <a href="https://g.page/r/CZk_puIrxUNNEBM/review">Donner votre avis Google</a></div>
+      <div>Tél : <a href="tel:+32479635732">0479 63 57 32</a></div>
+    </div>
+    <img src="${QR}" alt="QR code">
+  </div>
+</div>
+<script>window.onload=function(){window.print();window.onafterprint=function(){window.close();};};<\/script>
+</body></html>`;
+
+  const pw = window.open('','_blank','width=800,height=1100');
+  pw.document.write(printHTML);
+  pw.document.close();
+
+  // ── Envoi Web3Forms ──
   try {
     await fetch('https://api.web3forms.com/submit', {
       method : 'POST',
@@ -1200,18 +1071,16 @@ coordForm.addEventListener('submit', async e => {
         telephone       : tel,
         email_client    : email,
         anonyme         : isAnon ? 'oui' : 'non',
-        total_ht        : document.getElementById('r-ht').textContent,
-        total_ttc       : document.getElementById('r-ttc').textContent,
+        total_ht        : totalHT,
+        total_ttc       : totalTTC,
         poste1          : document.getElementById('r-p1').textContent,
         poste2          : document.getElementById('r-p2').textContent,
         poste3          : document.getElementById('r-p3').textContent,
         poste4          : document.getElementById('r-p4').textContent,
-        message         : coordsText + '\n\nDevis généré automatiquement.'
+        message         : `Client : ${nom}\nAdresse : ${adresse}\nTél : ${tel}\nEmail : ${email}\n\nDevis généré automatiquement.`
       })
     });
-  } catch(err) {
-    console.error('Erreur envoi Web3Forms', err);
-  }
+  } catch(err) { console.error('Web3Forms:', err); }
 });
 
 // =============================================
