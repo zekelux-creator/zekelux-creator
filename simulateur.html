@@ -974,83 +974,85 @@ coordForm.addEventListener('submit', async e => {
 
   // ── QR code base64 ──
   const QR = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKAQAAAABTUiuoAAACQklEQVR4nO2bQYqkQBBFX7RCLVPoA9RR9GpzpL6BHmVuoMuGlD+LzFSrBwZrwK6EjoCSsnyLD0GYET+zTJyM6e0sCY466ugbLJZjWPIFADNrKY/aSrQ6SiNJEtCI6R6BxUxShF6SNFej1dFcRxA+LWVmuks2AKnyhssFOHoq2uPN8i7rPzqMsLZ/tR8v1+roAxo+jalrBEsLU/ftAhz9d6TaOtRRP4JY3qNBGyEIWK4T4OiT6Jr6PlhuqaxsAOhnYDIzs+5aAY6eDR1iBo1BghCR5ub4cHy5VkdTUiBEIOTE0Cvf0iuikcazVQNKHqaClIupXApQfvNs1YE2Oo5VIQKsltYtALN7vFSAo0+gqyXLYgwxtxVDUKotjSEi/XbnqQqUw0KVLnMjjVBMp81+8jfh69Fj6zcC5U3YKHWHfTEQPVsVoKWDnxvlsjrkaGvoPVt1oNu8tQ9Y27cZ9gx6tupAl7yDZQNgZre0bWLWgX51q10twNEn0CDl+Tf17asBq+U9rxCxoRqtPxzlOA4/NBj7WuY9YUVoKG+9cbltDsZqJXnXC3D0dOxtRfIENW9u1BZeW5Wgjx78NhgfHEPAO/hK0GMd9cXL3XNEP+ehy7NVCbqfeVot7ZOkzZIZsr9xsQBHz0bZHWm0+4T7ClYeeG3Vh6aecDUmu8nsHtHIahoX9+CrQNsv94KYDqcpfcKM9R/XCXD0P6ZjbV5usXHTurWd1fA3YSXofuYpH4FPK9jUQT5ofbEAR0+G+T+CHHX0EvQPgibYLS7QSPAAAAAASUVORK5CYII=';
+// ── Collecter les lignes remplies ──
+const fmtE = v => v.toLocaleString('fr-BE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
 
-  // ── Construire le HTML de la fenêtre d'impression ──
-  const printHTML = `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
-<title>Simulation – SRL KUS ZEKERIYA</title>
+const postes = [
+  { id:'p1-tbody' },
+  { id:'p2-tbody' },
+  { id:'p3-tbody' },
+  { id:'p4-tbody' },
+];
+
+let lignesHTML = '';
+postes.forEach(({id}) => {
+  const tbody = document.getElementById(id);
+  if (!tbody) return;
+  tbody.querySelectorAll('tr[data-pu]').forEach(tr => {
+    const qtyInput = tr.querySelector('.qty');
+    const chk = tr.querySelector('.forfait-check');
+    let qty = qtyInput ? parseFloat(qtyInput.value)||0 : 0;
+    if (chk) qty = chk.checked ? 1 : 0;
+    if (!qty) return; // <-- on ignore les lignes vides
+
+    const pu = parseFloat(tr.dataset.pu)||0;
+    const tot = qty * pu;
+    const desig = tr.querySelector('td')?.textContent?.trim() || '';
+    const unite = tr.querySelector('td:nth-child(2)')?.textContent?.trim() || '';
+    
+    lignesHTML += `<tr>
+      <td>${desig}</td>
+      <td>${qty} ${unite}</td>
+      <td>${fmtE(pu)}</td>
+      <td>${fmtE(tot)}</td>
+    </tr>`;
+  });
+});
+
+// ── Construire le HTML de la fenêtre d'impression ──
+const printHTML = `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<title>Devis simplifié – SRL KUS ZEKERIYA</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:Arial,sans-serif;font-size:12px;color:#222;background:#fff;}
-  @page{size:A4;margin:0;}
-  /* EN-TÊTE JAUNE */
-  .entete{background:#F5C800;padding:16px 20px 14px;}
-  .entete h1{font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#111;margin-bottom:4px;}
-  .entete p{font-size:10px;color:#333;}
-  .entete a{color:#333;text-decoration:none;}
-  /* CORPS */
-  .corps{padding:16px 20px;}
-  .titre-sim{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
-  .sous-titre{font-size:9px;color:#777;font-style:italic;margin-bottom:10px;}
-  .client-info{font-size:10px;color:#444;margin-bottom:14px;line-height:1.7;}
-  /* TABLEAU */
-  table{width:100%;border-collapse:collapse;font-size:11px;}
-  thead th{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:#666;font-weight:700;border-bottom:1.5px solid #ccc;padding:5px 8px;text-align:left;}
-  thead th:not(:first-child){text-align:right;}
-  .section-label td{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#D4A900;padding:10px 8px 3px;}
-  /* TOTAUX */
-  .sous-totaux{display:flex;justify-content:flex-end;gap:24px;font-size:10px;color:#555;padding:8px 8px 4px;}
-  .total-ttc{display:flex;justify-content:space-between;align-items:center;background:#F5C800;padding:10px 14px;margin-top:2px;}
-  .total-ttc .label{font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#111;}
-  .total-ttc .montant{font-size:20px;font-weight:900;color:#111;}
-  /* FOOTER */
-  .footer-pdf{display:flex;justify-content:space-between;align-items:flex-start;border-top:1px solid #ddd;padding-top:10px;margin-top:18px;font-size:10px;color:#444;}
-  .footer-pdf a{color:#1a56db;text-decoration:underline;}
-  .footer-pdf img{width:62px;height:62px;}
-</style>
-</head><body>
-<div class="entete">
-  <h1>SRL KUS ZEKERIYA</h1>
-  <p>0479 63 57 32 &bull; <a href="mailto:zekelux@hotmail.com">zekelux@hotmail.com</a> &bull; <a href="https://plafonnage-facade-luxembourg.be">plafonnage-facade-luxembourg.be</a></p>
-</div>
-<div class="corps">
-  <div class="titre-sim">SIMULATION</div>
-  <div class="sous-titre">Document non contractuel – estimation indicative</div>
-  <div class="client-info">
-    Client : ${nom}<br>
-    Adresse : ${adresse}<br>
-    Tél : ${tel} &nbsp;|&nbsp; Email : ${email}<br>
-    Date : ${date}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Arial,Helvetica,sans-serif;font-size:11pt;color:#000;background:#fff}
+  @page{size:A4;margin:15mm}
+  .wrap{max-width:800px;margin:0 auto}
+  .head h1{font-size:18pt;font-weight:700;text-transform:uppercase;margin:0}
+  .head .sub{font-size:9pt;color:#333;margin-top:3px}
+  .title{font-size:14pt;font-weight:700;margin:18px 0 6px;text-transform:uppercase;border-bottom:2px solid #000;padding-bottom:4px}
+  .client{font-size:10pt;margin-bottom:12px}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th{font-size:10pt;text-align:left;border-bottom:1px solid #000;padding:6px 4px;font-weight:700}
+  td{font-size:10pt;padding:6px 4px;border-bottom:1px solid #ddd}
+  th:nth-child(2),th:nth-child(3),th:nth-child(4),td:nth-child(2),td:nth-child(3),td:nth-child(4){text-align:right}
+  .total{margin-top:14px;text-align:right;font-size:13pt;font-weight:700;border-top:2px solid #000;padding-top:8px}
+  .foot{margin-top:28px;display:flex;justify-content:space-between;align-items:flex-end;font-size:9pt;border-top:1px solid #ddd;padding-top:8px}
+  .foot a{color:#000;text-decoration:none}
+  .foot img{width:70px;height:70px}
+</style></head><body><div class="wrap">
+  <div class="head">
+    <h1>SRL KUS ZEKERIYA</h1>
+    <div class="sub">0479 63 57 32 • zekelux@hotmail.com • plafonnage-facade-luxembourg.be</div>
   </div>
+  <div class="title">Devis simplifié</div>
+  <div class="client">Client : ${nom} – ${date}</div>
   <table>
-    <thead>
-      <tr>
-        <th>Désignation</th>
-        <th style="text-align:right">Qté</th>
-        <th style="text-align:right">PU HTVA</th>
-        <th style="text-align:right">Total</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Désignation</th><th>Qté</th><th>PU HTVA</th><th>Total</th></tr></thead>
     <tbody>${lignesHTML}</tbody>
   </table>
-  <div class="sous-totaux">
-    <span>Total HTVA : <strong>${totalHT}</strong></span>
-    <span>TVA (${tauxLabel}) : <strong>${totalTVA}</strong></span>
-  </div>
-  <div class="total-ttc">
-    <span class="label">TOTAL TTC (${tauxLabel})</span>
-    <span class="montant">${totalTTC}</span>
-  </div>
-  <div class="footer-pdf">
+  <div class="total">TOTAL TTC (${tauxLabel}) ${totalTTC}</div>
+  <div class="foot">
     <div>
-      <div style="font-weight:700;margin-bottom:4px;">Retrouvez-nous en ligne :</div>
+      <div style="font-weight:700;margin-bottom:3px">Retrouvez-nous en ligne :</div>
       <div>Site : <a href="https://plafonnage-facade-luxembourg.be">plafonnage-facade-luxembourg.be</a></div>
       <div>Avis : <a href="https://g.page/r/CZk_puIrxUNNEBM/review">Donner votre avis Google</a></div>
       <div>Tél : <a href="tel:+32479635732">0479 63 57 32</a></div>
     </div>
-    <img src="${QR}" alt="QR code">
+    <img src="${QR}" alt="QR">
   </div>
-</div>
-<script>window.onload=function(){window.print();window.onafterprint=function(){window.close();};};<\/script>
+</div><script>window.onload=function(){window.print();setTimeout(()=>window.close(),300)}<\/script></body></html>`;
+  // ── Construire le HTML de la fenêtre d'impression ──
+ 
 </body></html>`;
 
   const pw = window.open('','_blank','width=800,height=1100');
