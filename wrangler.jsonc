@@ -10,5 +10,15 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "routes": [
+    {
+      "pattern": "plafonnage-facade-luxembourg.be/*",
+      "zone_name": "plafonnage-facade-luxembourg.be"
+    },
+    {
+      "pattern": "www.plafonnage-facade-luxembourg.be/*",
+      "zone_name": "plafonnage-facade-luxembourg.be"
+    }
   ]
 }
