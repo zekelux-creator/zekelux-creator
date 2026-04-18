@@ -34,7 +34,7 @@ Allow: /wp-admin/admin-ajax.php
 Disallow: /wp-content/plugins/
 Disallow: /readme.html
 
-Sitemap: https://plafonnage-facade-luxembourg.be/sitemap_index.xml`;
+Sitemap: https://plafonnage-facade-luxembourg.be/sitemap.xml`;
 
       return new Response(robotsContent, {
         headers: {
