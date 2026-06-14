@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isolation des Combles & Toiture – Province de Luxembourg | SRL KUS ZEKERIYA</title>
+    <meta name="description" content="Stoppez 30% de pertes de chaleur. Isolation combles, Gyproc et plafonnage en Province de Luxembourg. Primes Wallonie jusqu'à 120€/m² en 2026. Devis gratuit 48h.">
+    <meta property="og:title" content="Isolation des Combles – Province Luxembourg | SRL KUS ZEKERIYA">
+    <meta property="og:description" content="Jusqu'à 120€/m² de prime Wallonie 2026. Isolation et aménagement de grenier par artisan plafonneur.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_BE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RoofingContractor",
+      "name": "SRL KUS ZEKERIYA",
+      "description": "Spécialiste isolation des combles, aménagement grenier, Gyproc et plafonnage en Province de Luxembourg",
+      "url": "https://plafonnage-facade-luxembourg.be/combles.html",
+      "telephone": "+32479635732",
+      "email": "zekelux@hotmail.com",
+      "areaServed": [
+        {"@type": "City", "name": "Bastogne"},
+        {"@type": "City", "name": "Libramont-Chevigny"},
+        {"@type": "City", "name": "Arlon"},
+        {"@type": "City", "name": "Neufchâteau"},
+        {"@type": "City", "name": "Vaux-sur-Sûre"}
+      ],
+      "serviceType": ["Isolation des combles", "Isolation toiture", "Plafonnage", "Pose Gyproc", "Aménagement grenier"]
+    }
+    </script>
+
+    <style>
+        /* ── TOKENS ─────────────────────────────────────────── */
+        :root {
+            --ink:     #1a1a18;
+            --chalk:   #f7f5f0;
+            --warm:    #e8e2d6;
+            --blue:    #1e3a5f;
+            --blue-lt: #2d5490;
+            --amber:   #c8640a;
+            --amber-lt:#e07a1f;
+            --mist:    #eef3f9;
+            --radius:  6px;
+            --shadow:  0 2px 18px rgba(30,58,95,.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--ink);
+            background: var(--chalk);
+        }
+
+        /* ── TYPOGRAPHY ─────────────────────────────────────── */
+        h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.2; }
+        h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+        h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--blue); margin-bottom: .5rem; }
+        h3 { font-size: 1.2rem; color: var(--amber); margin-bottom: .4rem; }
+        p  { margin-bottom: 1rem; }
+
+        /* ── NAV ────────────────────────────────────────────── */
+        .topbar {
+            background: var(--blue);
+            color: #fff;
+            padding: .55rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .85rem;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .topbar a { color: #cce0ff; text-decoration: none; }
+        .topbar a:hover { color: #fff; }
+        .topbar-right { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+        nav {
+            background: #fff;
+            border-bottom: 3px solid var(--blue);
+            padding: .9rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+        }
+        .brand { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--blue); text-decoration: none; }
+        .brand span { color: var(--amber); }
+        nav a { color: var(--blue); text-decoration: none; font-size: .9rem; font-weight: 500; }
+        nav a:hover { color: var(--amber); }
+
+        /* ── HERO ───────────────────────────────────────────── */
+        .hero {
+            background: linear-gradient(145deg, var(--blue) 0%, #0f2540 100%);
+            color: #fff;
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .hero-eyebrow {
+            display: inline-block;
+            background: var(--amber);
+            color: #fff;
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .3rem .9rem;
+            border-radius: 2px;
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 { color: #fff; margin-bottom: 1rem; max-width: 740px; margin-left: auto; margin-right: auto; }
+        .hero p.sub { font-size: 1.1rem; opacity: .85; max-width: 580px; margin: 0 auto 2rem; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+        /* ── BUTTONS ────────────────────────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .8rem 1.6rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: .95rem;
+            text-decoration: none;
+            transition: transform .15s, box-shadow .15s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+        .btn-amber  { background: var(--amber); color: #fff; }
+        .btn-amber:hover { background: var(--amber-lt); }
+        .btn-white  { background: #fff; color: var(--blue); }
+        .btn-blue   { background: var(--blue); color: #fff; }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); }
+        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+        .btn-lg { padding: 1rem 2rem; font-size: 1.05rem; }
+
+        /* ── URGENCY BANNER ─────────────────────────────────── */
+        .urgency-bar {
+            background: #fff3cd;
+            border-top: 3px solid #f0a000;
+            border-bottom: 3px solid #f0a000;
+            padding: .7rem 1.5rem;
+            text-align: center;
+            font-size: .92rem;
+            font-weight: 500;
+            color: #7a4800;
+        }
+        .urgency-bar strong { color: #c8640a; }
+
+        /* ── LAYOUT ─────────────────────────────────────────── */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 4rem 1.5rem; }
+        section:nth-child(even) { background: #fff; }
+
+        /* ── STAT ROW ───────────────────────────────────────── */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            background: #fff;
+            padding: 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--warm);
+        }
+        .stat { text-align: center; }
+        .stat-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.6rem;
+            color: var(--blue);
+            line-height: 1;
+            display: block;
+        }
+        .stat-num em { color: var(--amber); font-style: normal; }
+        .stat-label { font-size: .82rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: #666; margin-top: .3rem; }
+
+        /* ── INFO / PRIME BOXES ─────────────────────────────── */
+        .info-box {
+            background: var(--mist);
+            border-left: 4px solid var(--blue);
+            padding: 1.2rem 1.4rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.5rem 0;
+        }
+        .prime-box {
+            background: #fff9f4;
+            border: 1.5px solid #f0c890;
+            border-radius: var(--radius);
+            padding: 1.5rem 1.6rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 12px rgba(200,100,10,.07);
+        }
+        .prime-box h3 { color: var(--blue); font-size: 1.25rem; }
+        .prime-box .badge {
+            display: inline-block;
+            background: var(--amber);
+            color: #fff;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            padding: .2rem .6rem;
+            border-radius: 3px;
+            margin-bottom: .6rem;
+            text-transform: uppercase;
+        }
+
+        /* ── SERVICES GRID ──────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: var(--chalk);
+            border: 1px solid var(--warm);
+            border-radius: var(--radius);
+            padding: 1.6rem;
+            transition: box-shadow .2s, border-color .2s;
+        }
+        .service-card:hover { box-shadow: var(--shadow); border-color: var(--blue); }
+        .service-icon { font-size: 2rem; margin-bottom: .8rem; display: block; }
+        .service-card h3 { color: var(--blue); font-size: 1.1rem; }
+        .service-card ul { margin: .8rem 0 0 1.2rem; font-size: .93rem; }
+        .service-card li { margin-bottom: .4rem; }
+
+        /* ── MATERIAU TABLE ─────────────────────────────────── */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: .93rem;
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .price-table th {
+            background: var(--blue);
+            color: #fff;
+            padding: .8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: .85rem;
+            letter-spacing: .04em;
+        }
+        .price-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--warm); }
+        .price-table tr:last-child td { border-bottom: none; }
+        .price-table tr:nth-child(even) td { background: #f8f9fb; }
+        .price-badge { background: #e8f0e8; color: #2a6e2a; font-size: .78rem; font-weight: 700; padding: .2rem .5rem; border-radius: 3px; }
+
+        /* ── ZONES ──────────────────────────────────────────── */
+        .zones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-top: 1rem;
+        }
+        .zone-chip {
+            background: var(--mist);
+            border: 1px solid #c5d8f0;
+            color: var(--blue);
+            padding: .4rem .9rem;
+            border-radius: 20px;
+            font-size: .88rem;
+            font-weight: 500;
+        }
+
+        /* ── FAQ ────────────────────────────────────────────── */
+        details {
+            border: 1px solid var(--warm);
+            border-radius: var(--radius);
+            margin-bottom: .8rem;
+            background: #fff;
+            overflow: hidden;
+        }
+        summary {
+            padding: 1rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--blue);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 1.3rem; color: var(--amber); transition: transform .2s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        .faq-body { padding: .1rem 1.2rem 1rem; color: #444; }
+
+        /* ── CTA SECTION ────────────────────────────────────── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--blue) 0%, #0f2540 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4.5rem 1.5rem;
+        }
+        .cta-section h2 { color: #fff; margin-bottom: .8rem; }
+        .cta-section p { opacity: .85; max-width: 560px; margin: 0 auto 2rem; }
+        .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+        .phone-display { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #fff; text-decoration: none; }
+        .phone-display:hover { color: #cce0ff; }
+
+        /* ── TRUST ITEMS ─────────────────────────────────────── */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .trust-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: var(--radius);
+            background: var(--mist);
+        }
+        .trust-icon { font-size: 2.2rem; margin-bottom: .6rem; display: block; }
+        .trust-item strong { display: block; color: var(--blue); font-size: 1rem; margin-bottom: .2rem; }
+        .trust-item span { font-size: .88rem; color: #555; }
+
+        /* ── FOOTER ─────────────────────────────────────────── */
+        footer {
+            background: var(--ink);
+            color: #bbb;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: .88rem;
+        }
+        footer a { color: #cce0ff; text-decoration: none; }
+        footer a:hover { color: #fff; }
+        footer p { margin-bottom: .4rem; }
+
+        /* ── STICKY CTA MOBILE ──────────────────────────────── */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: var(--amber);
+            color: #fff;
+            text-align: center;
+            padding: .9rem;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            z-index: 200;
+            box-shadow: 0 -3px 15px rgba(0,0,0,.2);
+        }
+
+        /* ── RESPONSIVE ─────────────────────────────────────── */
+        @media (max-width: 640px) {
+            .topbar { font-size: .78rem; }
+            .topbar-right { gap: .8rem; }
+            .hero { padding: 3.5rem 1rem 3rem; }
+            section { padding: 3rem 1rem; }
+            .price-table { font-size: .82rem; }
+            .price-table th, .price-table td { padding: .6rem .7rem; }
+            .sticky-cta { display: block; }
+            body { padding-bottom: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+    <span>🏠 Isolation &amp; Plafonnage – Province de Luxembourg</span>
+    <div class="topbar-right">
+        <a href="tel:+32479635732">📞 0479 63 57 32</a>
+        <a href="https://wa.me/32479635732?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20l'isolation%20de%20mes%20combles." target="_blank">💬 WhatsApp</a>
+        <a href="mailto:zekelux@hotmail.com">✉ zekelux@hotmail.com</a>
+    </div>
+</div>
+
+<!-- Nav -->
+<nav>
+    <a href="https://plafonnage-facade-luxembourg.be/" class="brand">SRL KUS <span>ZEKERIYA</span></a>
+    <div style="display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap;">
+        <a href="#prestations">Nos services</a>
+        <a href="#materiaux">Matériaux</a>
+        <a href="#primes">Primes 2026</a>
+        <a href="#zones">Zones</a>
+        <a href="#faq">FAQ</a>
+        <a href="tel:+32479635732" class="btn btn-amber" style="padding:.5rem 1rem; font-size:.88rem;">📞 Devis gratuit</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-eyebrow">25 ans d'expérience · Province de Luxembourg</div>
+    <h1>Isolation des Combles : <em style="font-style:italic; color:#f0c890;">économisez jusqu'à 30 %</em> sur votre chauffage</h1>
+    <p class="sub">Artisan plafonneur qualifié. Isolation toiture, aménagement grenier et Gyproc, clé en main, sans sous-traitant.</p>
+    <div class="hero-ctas">
+        <a href="tel:+32479635732" class="btn btn-amber btn-lg">📞 Appeler le 0479 63 57 32</a>
+        <a href="https://wa.me/32479635732?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20l'isolation%20de%20mes%20combles." target="_blank" class="btn btn-outline btn-lg">💬 WhatsApp</a>
+        <a href="mailto:zekelux@hotmail.com?subject=Devis isolation combles" class="btn btn-white">✉ Devis par email</a>
+    </div>
+</section>
+
+<!-- Urgency bar -->
+<div class="urgency-bar">
+    ⚠️ <strong>Régime de primes temporaire jusqu'au 30 septembre 2026</strong> — Jusqu'à <strong>120 €/m²</strong> remboursés par la Wallonie. Réservez votre créneau avant la fin de la saison !
+</div>
+
+<!-- Stats -->
+<div class="stats">
+    <div class="stat">
+        <span class="stat-num">30<em>%</em></span>
+        <div class="stat-label">de chaleur perdue par le toit</div>
+    </div>
+    <div class="stat">
+        <span class="stat-num">120<em>€</em></span>
+        <div class="stat-label">par m² de prime Wallonie (R1)</div>
+    </div>
+    <div class="stat">
+        <span class="stat-num">48<em>h</em></span>
+        <div class="stat-label">pour recevoir votre devis</div>
+    </div>
+    <div class="stat">
+        <span class="stat-num">25<em>ans</em></span>
+        <div class="stat-label">d'expérience en Province Lux.</div>
+    </div>
+    <div class="stat">
+        <span class="stat-num">2<em>–3</em></span>
+        <div class="stat-label">ans de retour sur investissement</div>
+    </div>
+</div>
+
+<!-- Pourquoi isoler -->
+<section id="pourquoi">
+    <div class="container">
+        <h2>Pourquoi isoler vos combles maintenant ?</h2>
+        <div class="info-box">
+            <p><strong>Le saviez-vous ?</strong> Jusqu'à <strong>30 % de la chaleur</strong> de votre habitation s'échappe par une toiture non isolée. C'est la priorité numéro&nbsp;1 avant d'investir dans des panneaux solaires ou une pompe à chaleur.</p>
+        </div>
+        <p>SRL KUS ZEKERIYA est le seul interlocuteur dont vous avez besoin : nous gérons à la fois l'isolation thermique et les finitions Gyproc. Pas de sous-traitant, pas de coordination hasardeuse — un chantier fluide, un devis clair.</p>
+
+        <div class="prime-box" id="primes">
+            <div class="badge">Primes Wallonie 2026</div>
+            <h3>Jusqu'à 120 €/m² remboursés par la Région wallonne</h3>
+            <p><strong>Régime temporaire du 14/02/2025 au 30/09/2026 — sans audit logement obligatoire.</strong></p>
+            <table class="price-table" style="margin-top:1rem;">
+                <thead>
+                    <tr>
+                        <th>Type d'isolant</th>
+                        <th>Prime de base</th>
+                        <th>Maximum (R1)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Classique (laine de verre / roche)</td>
+                        <td>20 €/m²</td>
+                        <td><strong>120 €/m²</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Biosourcé (ouate cellulose, laine de bois)</td>
+                        <td>26 €/m²</td>
+                        <td><strong>156 €/m²</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top:1rem; font-size:.9rem; color:#7a4800;">+ TVA 6 % (maison &gt; 10 ans) · + réduction d'impôt 30 % (max 3 900 €) · Montant multiplié ×1 à ×6 selon revenus</p>
+            <p style="color:#b34000; font-weight:600; font-size:.92rem; margin-bottom:0;">⏰ Travaux à terminer avant le 30/09/2026 pour bénéficier de ce régime.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Prestations -->
+<section id="prestations">
+    <div class="container">
+        <h2>Notre savoir-faire : isolation &amp; plafonnage</h2>
+        <p>Notre double expertise d'isoleur et de plafonneur vous garantit un chantier complet sans intermédiaire.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🌡️</span>
+                <h3>Isolation thermique &amp; acoustique</h3>
+                <p style="font-size:.9rem;">Norme R&nbsp;≥&nbsp;5 imposée par la Wallonie, respectée sur chaque chantier.</p>
+                <ul>
+                    <li>Laine minérale, laine de roche, PUR/PIR</li>
+                    <li>Épaisseur adaptée (18 cm laine de roche ou 12 cm PUR pour R=5)</li>
+                    <li>Pare-vapeur rigoureux côté chaud</li>
+                    <li>Matériaux certifiés éligibles aux primes</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🧱</span>
+                <h3>Aménagement &amp; finitions Gyproc</h3>
+                <p style="font-size:.9rem;">Transformez votre grenier en chambre, bureau ou salle de jeu.</p>
+                <ul>
+                    <li>Cloisons et faux-plafonds Gyproc</li>
+                    <li>Lissage, jointoyage et enduisage</li>
+                    <li>Murs prêts à peindre</li>
+                    <li>Finitions parfaites par artisan plafonneur</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🏠</span>
+                <h3>Combles perdus ou habitables</h3>
+                <p style="font-size:.9rem;">Toitures inclinées ou plates, par l'intérieur.</p>
+                <ul>
+                    <li>Soufflage de laine pour combles perdus</li>
+                    <li>Sarking ou isolation sous chevrons</li>
+                    <li>Grenier à aménager de A à Z</li>
+                    <li>Conseil sur le meilleur système selon votre toiture</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Matériaux -->
+<section id="materiaux">
+    <div class="container">
+        <h2>Choisir le bon isolant</h2>
+        <p>Nous vous conseillons sur le matériau le plus adapté à votre toiture, votre budget et votre éligibilité aux primes.</p>
+
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Isolant</th>
+                    <th>Prix indicatif</th>
+                    <th>Épaisseur R=5</th>
+                    <th>Point fort</th>
+                    <th>Prime</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Laine de roche</strong></td>
+                    <td>25–40 €/m²</td>
+                    <td>~18 cm</td>
+                    <td>Rapport qualité/prix + acoustique</td>
+                    <td><span class="price-badge">✓ Éligible</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Laine de verre</strong></td>
+                    <td>20–35 €/m²</td>
+                    <td>~20 cm</td>
+                    <td>Solution économique</td>
+                    <td><span class="price-badge">✓ Éligible</span></td>
+                </tr>
+                <tr>
+                    <td><strong>PUR / PIR</strong></td>
+                    <td>30–50 €/m²</td>
+                    <td>~12 cm</td>
+                    <td>Idéal si hauteur limitée</td>
+                    <td><span class="price-badge">✓ Éligible</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Ouate de cellulose</strong></td>
+                    <td>26–45 €/m²</td>
+                    <td>~22 cm</td>
+                    <td>Biosourcé · prime majorée</td>
+                    <td><span class="price-badge" style="background:#d4eecc; color:#1a5c1a;">✓ Biosourcé</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size:.85rem; color:#666; margin-top:.8rem;">* Prix hors pose et hors primes. Devis personnalisé fourni sous 48 h.</p>
+    </div>
+</section>
+
+<!-- Zones d'intervention -->
+<section id="zones">
+    <div class="container">
+        <h2>Zone d'intervention – Province de Luxembourg</h2>
+        <p>Basés à Vaux-sur-Sûre, nous intervenons rapidement dans toute la Province de Luxembourg et alentours :</p>
+        <div class="zones">
+            <span class="zone-chip">📍 Bastogne</span>
+            <span class="zone-chip">📍 Vaux-sur-Sûre</span>
+            <span class="zone-chip">📍 Libramont-Chevigny</span>
+            <span class="zone-chip">📍 Arlon</span>
+            <span class="zone-chip">📍 Neufchâteau</span>
+            <span class="zone-chip">📍 Houffalize</span>
+            <span class="zone-chip">📍 Fauvillers</span>
+            <span class="zone-chip">📍 Étalle</span>
+            <span class="zone-chip">📍 Grand-Duché (frontalier)</span>
+        </div>
+
+        <div style="margin-top:2rem;">
+            <h3 style="color:var(--blue); font-size:1.1rem; margin-bottom:.8rem;">Pourquoi choisir un artisan local ?</h3>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span class="trust-icon">⚡</span>
+                    <strong>Réactivité</strong>
+                    <span>Devis sous 48 h, chantier rapidement planifié</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🤝</span>
+                    <strong>Un seul interlocuteur</strong>
+                    <span>Isolation ET finitions, sans sous-traitant</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🏆</span>
+                    <strong>25 ans d'expérience</strong>
+                    <span>Des centaines de chantiers en Province Lux.</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">📋</span>
+                    <strong>Aide aux primes</strong>
+                    <span>Nous calculons votre prime et préparons les documents</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <h2>Questions fréquentes</h2>
+        <p>Tout ce que vous devez savoir avant de lancer votre chantier d'isolation.</p>
+        <br>
+
+        <details open>
+            <summary>Dois-je faire un audit logement pour obtenir la prime isolation toiture ?</summary>
+            <div class="faq-body">
+                <p>Non. Depuis le <strong>14 février 2025</strong>, l'audit logement n'est plus obligatoire pour l'isolation toiture et combles en Wallonie. Vous passez directement à la demande de prime et aux travaux. C'est l'une des mesures les plus avantageuses du régime temporaire 2025–2026.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Laine de roche ou polyuréthane : que choisir ?</summary>
+            <div class="faq-body">
+                <p><strong>Laine de roche :</strong> meilleur rapport qualité-prix, excellente isolation acoustique, 25–40 €/m². Idéale si la hauteur disponible est suffisante (prévoir ~18 cm).</p>
+                <p><strong>PUR/PIR :</strong> plus dense, seulement ~12 cm pour R=5. Parfait si la hauteur sous chevrons est limitée ou si vous souhaitez gagner chaque centimètre dans un grenier à aménager.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>En combien de temps l'investissement est-il rentabilisé ?</summary>
+            <div class="faq-body">
+                <p>Avec les primes R1–R2 et la TVA à 6 %, le retour sur investissement est généralement de <strong>2 à 3 ans</strong>. Chaque année ensuite, vous économisez 25 à 30 % sur votre facture de chauffage, pour un isolant qui dure 30 à 50 ans.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Puis-je bénéficier des primes si mon habitation a moins de 10 ans ?</summary>
+            <div class="faq-body">
+                <p>La TVA à 6 % est réservée aux bâtiments de plus de 10 ans. Les primes Wallonie sont quant à elles accessibles indépendamment de l'âge du bâtiment, mais soumises à d'autres conditions (revenus du ménage, résidence principale, niveau de performance). Nous étudions votre situation gratuitement.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Combien de temps dure un chantier d'isolation des combles ?</summary>
+            <div class="faq-body">
+                <p>Pour une maison standard (60 à 100 m² de surface de combles), comptez <strong>2 à 4 jours</strong> de travaux, finitions Gyproc comprises. Les combles perdus en soufflage peuvent être réalisés en une seule journée.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Comment obtenir mon devis ?</summary>
+            <div class="faq-body">
+                <p>Appelez-nous au <a href="tel:+32479635732"><strong>0479 63 57 32</strong></a>, envoyez un WhatsApp ou un email à <a href="mailto:zekelux@hotmail.com">zekelux@hotmail.com</a>. Nous visitons votre toiture et vous fournissons un devis détaillé sous 48 h, avec l'estimation de votre prime selon vos revenus.</p>
+            </div>
+        </details>
+    </div>
+</section>
+
+<!-- CTA final -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Prêt à réduire vos factures et valoriser votre bien ?</h2>
+        <p>Devis gratuit sous 48 h. Nous calculons votre prime Wallonie et gérons toutes les finitions.</p>
+        <div class="cta-row">
+            <a href="tel:+32479635732" class="phone-display">📞 0479 63 57 32</a>
+            <a href="tel:+32479635732" class="btn btn-amber btn-lg">Appeler maintenant</a>
+            <a href="https://wa.me/32479635732?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20l'isolation%20de%20mes%20combles." target="_blank" class="btn btn-white">💬 WhatsApp</a>
+            <a href="mailto:zekelux@hotmail.com?subject=Devis isolation combles" class="btn btn-outline">✉ Email</a>
+        </div>
+        <p style="margin-top:1.5rem; opacity:.7; font-size:.88rem;">Ou retrouvez toutes nos prestations sur <a href="https://plafonnage-facade-luxembourg.be/" style="color:#cce0ff;">plafonnage-facade-luxembourg.be</a></p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p><strong style="color:#fff;">SRL KUS ZEKERIYA</strong> — Plafonneur &amp; Isoleur · Vaux-sur-Sûre · Province de Luxembourg</p>
+    <p>
+        <a href="tel:+32479635732">0479 63 57 32</a> ·
+        <a href="mailto:zekelux@hotmail.com">zekelux@hotmail.com</a> ·
+        <a href="https://plafonnage-facade-luxembourg.be/">plafonnage-facade-luxembourg.be</a>
+    </p>
+    <p style="margin-top:.8rem; font-size:.82rem;">© 2026 SRL KUS ZEKERIYA · TVA BE 1005336605 · Expert en plafonnage, crépi, isolation façade &amp; combles</p>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<a href="tel:+32479635732" class="sticky-cta">📞 Appeler : 0479 63 57 32 — Devis gratuit</a>
+
+</body>
+</html>
